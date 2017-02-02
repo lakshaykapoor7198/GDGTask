@@ -1,0 +1,42 @@
+Twitter: @Lakshaykapoor8
+
+Question: > Write a twitter bot which will tweet automatically when a new issue is created on any of the repositories under GDGVIT organization (https://github.com/GDGVIT/)? 
+
+Languages Used:- 
+1. NodeJs 
+2. MongoDB
+
+Modules Used:-
+1. OctaNode - Opensource NodeJs library  , also on github, used to access github.
+2. Twit - For making Twitter Bot to tweet if any new issue is created in the last hour
+3. MongoClient - To access Database
+
+What Should be installed on your system to run it?
+1. NodeJS - 7.04 version (or 6.2.11)
+2. MongoDB - 3.4
+
+How to run it?
+
+First of all, Create a new issue in any of your repo's at GDGVIT, ( recent issues created from now to 1hr before will be tweeted on @Lakshaykapoor8 );
+1. Start your mongod service and make sure u r connected to internet.
+2. Extract the zip file.
+3. Migrate to extracted folder and Run "npm install" in terminal.
+4. Run Command : " node app.js " ( or u may run " nodemon " if u have nodemon installed globally(prefferable))
+5. Let it run for 1 minute until u see many "Repo Inserted " Messages.
+6. Press "Ctrl+C"
+7. Now, Run " node model/mongo.js " in terminal
+8. U will see new issues as output in terminal then press "Ctrl+C" to exit.
+9. Now, Dont forget, It is a twitter bot. So, Open ur twitter account and Search "@Lakshaykapoor8"
+10. There you will see a tweet which will contain the link to the repository in which new issue is created.
+11. That's it!
+
+Explanation:
+
+"app.js" :-
+
+This file fetches all the repositories issues from "GDGVIT" github page and stores them in database.
+
+"/model/mongo.js" :-
+
+This file takes all the repositories issues and find the new issues based on time ,status and comments and tweet them on Twitter Page.
+
